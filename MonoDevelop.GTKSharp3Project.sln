@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoDevelop.GTKSharp3Project", "MonoDevelop.GTKSharp3Project\MonoDevelop.GTKSharp3Project.csproj", "{A7F86FA8-7871-4235-AA9D-AFAAC3E2D8CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7F86FA8-7871-4235-AA9D-AFAAC3E2D8CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7F86FA8-7871-4235-AA9D-AFAAC3E2D8CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7F86FA8-7871-4235-AA9D-AFAAC3E2D8CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7F86FA8-7871-4235-AA9D-AFAAC3E2D8CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = MonoDevelop.GTKSharp3Project\MonoDevelop.GTKSharp3Project.csproj
+	EndGlobalSection
+EndGlobal

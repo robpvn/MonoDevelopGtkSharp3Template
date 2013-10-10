@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<Template 
+	originator="Robert Nordan" 
+	created="10/10/2013" 
+	lastModified="10/10/2013">
+	
+	<!-- Template Header -->
+	<TemplateConfiguration>
+		<_Name>GTK#3.0 Project</_Name>
+		<_Category>C#</_Category>
+		<Icon>md-project-gui|res:csharp-icon-32.png</Icon>
+		<LanguageName>C#</LanguageName>
+		<_Description>Creates a new GTK#3 project, where you edit the UI files externally with Glade.</_Description>
+		<DefaultFilename>GTKSharp3Project</DefaultFilename>
+	</TemplateConfiguration>
+	<!-- Actions -->
+	<Actions>
+		<Open filename="Program.cs" />
+		<Open filename="MainWindow.cs" />
+	</Actions>
+	<!-- Template Content -->
+	<Combine name="${ProjectName}" directory=".">
+		<Options>
+			<StartupProject>${ProjectName}</StartupProject>
+		</Options>
+		<Project name="${ProjectName}" directory=".">
+			<Options Target = "WinExe"/>
+				<References>
+					<Reference type="Package" refto="System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+					<Reference type="Package" SpecificVersion="false" refto="gtk-sharp, Version=3.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+					<Reference type="Package" SpecificVersion="false" refto="gdk-sharp, Version=3.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+					<Reference type="Package" SpecificVersion="false" refto="glib-sharp, Version=3.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+					<Reference type="Package" SpecificVersion="false" refto="pango-sharp, Version=3.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+					<Reference type="Package" SpecificVersion="false" refto="atk-sharp, Version=3.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+				</References>
+			<Files>
+					<File name="Program.cs" AddStandardHeader="True">
+<![CDATA[using System;
+using Gtk;
+
+namespace ${Namespace}
+{
+	class MainClass
+	{
+		public static void Main (string[] args)
+		{
+			Application.Init ();
+			Builder builder = new Builder (null, "${Namespace}.interfaces.MainWindow.ui",null);
+			MainWindow win = new MainWindow (builder, builder.GetObject ("window1").Handle);
+			win.Show ();
+			Application.Run ();
+		}
+	}
+}]]>
+</File>
+					<File name="MainWindow.cs" AddStandardHeader="True">
+<![CDATA[using System;
+using Gtk;
+using UI = Gtk.Builder.ObjectAttribute; 
+
+public partial class MainWindow: Gtk.Window
+{
+
+	[UI] Gtk.Button button1;
+	[UI] Gtk.Label label1;
+
+	int clickedTimes;
+
+	public MainWindow (Builder builder, IntPtr handle): base (handle)
+	{
+		builder.Autoconnect (this);
+		DeleteEvent += OnDeleteEvent;
+
+		button1.Clicked += onButtonClick;
+	}
+
+	protected void onButtonClick (object sender, EventArgs a)
+	{
+		clickedTimes++;
+		label1.Text = string.Format ("Hello World! This button has been clicked {0} time(s).", clickedTimes);
+	}
+
+	protected void OnDeleteEvent (object sender, DeleteEventArgs a)
+	{
+		Application.Quit ();
+		a.RetVal = true;
+	}
+}]]>
+					</File>
+
+					<File name="interfaces/MainWindow.ui" AddStandardHeader="True" BuildAction="EmbeddedResource" LogicalName="MainWindow.ui">
+<![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <!-- interface-requires gtk+ 3.0 -->
+  <object class="GtkWindow" id="window1">
+    <property name="can_focus">False</property>
+    <child>
+      <object class="GtkBox" id="box1">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkLabel" id="label1">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="yalign">0.47999998927116394</property>
+            <property name="label" translatable="yes">Hello World! This button has been clicked 0 time(s).</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="button1">
+            <property name="label" translatable="yes">Click me!</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="receives_default">True</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>]]>
+				</File>
+				<FileTemplateReference TemplateID="CSharpAssemblyInfo" name="AssemblyInfo.cs" />
+			</Files>
+		</Project>
+	</Combine>
+</Template>

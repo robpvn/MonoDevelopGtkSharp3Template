@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <Addin namespace   = "MonoDevelop.GTKSharp3"  
+           id          = "GTKSharp3Project"  
+           name        = "GTK# 3 Simple Project Template"  
+           author      = "Robert Nordan"  
+           copyright   = "MIT/X11"  
+           url         = "http://www.robpvn.net"  
+           description = "Provides a template for a simple GTK#3 Project where you use Glade (externally) to design the UI files."  
+           category    = "GTK3 Development"  
+           version     = "0.1">  
+           
+		<Dependencies>  
+			<Addin id="::MonoDevelop.Ide" version="3.0"/>  
+		</Dependencies> 
+		
+		<Extension path = "/MonoDevelop/Ide/ProjectTemplates">
+				<ProjectTemplate id = "GTKSharp3Project" resource = "GTKSharp3Project.xpt.xml"/>
+		</Extension>
+  
+    </Addin>  
+
