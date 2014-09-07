@@ -53,4 +53,9 @@
   <ItemGroup>
     <Folder Include="templates\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="addin.info">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 </Project>
