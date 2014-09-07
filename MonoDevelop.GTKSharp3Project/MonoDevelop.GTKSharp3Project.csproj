@@ -27,6 +27,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="AfterBuild" command="zip ${ProjectName}.mpack addin.info ${TargetName}" workingdir="${TargetDir}" />
+        <Command type="AfterClean" command="rm -f ${TargetDir}/${ProjectName}.mpack" />
+      </CustomCommands>
+    </CustomCommands>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
