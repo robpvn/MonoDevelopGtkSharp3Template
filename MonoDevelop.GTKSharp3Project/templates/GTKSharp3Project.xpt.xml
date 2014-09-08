@@ -2,7 +2,7 @@
 <Template 
 	originator="Robert Nordan" 
 	created="10/10/2013" 
-	lastModified="10/10/2013">
+	lastModified="07/09/2014">
 	
 	<!-- Template Header -->
 	<TemplateConfiguration>
@@ -27,11 +27,11 @@
 			<Options Target = "WinExe"/>
 				<References>
 					<Reference type="Package" refto="System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-					<Reference type="Package" SpecificVersion="false" refto="gtk-sharp, Version=3.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-					<Reference type="Package" SpecificVersion="false" refto="gdk-sharp, Version=3.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-					<Reference type="Package" SpecificVersion="false" refto="glib-sharp, Version=3.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-					<Reference type="Package" SpecificVersion="false" refto="pango-sharp, Version=3.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-					<Reference type="Package" SpecificVersion="false" refto="atk-sharp, Version=3.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+					<Reference type="Package" SpecificVersion="true" refto="gtk-sharp, Version=3.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+					<Reference type="Package" SpecificVersion="true" refto="gdk-sharp, Version=3.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+					<Reference type="Package" SpecificVersion="true" refto="glib-sharp, Version=3.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+					<Reference type="Package" SpecificVersion="true" refto="pango-sharp, Version=3.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+					<Reference type="Package" SpecificVersion="true" refto="atk-sharp, Version=3.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
 				</References>
 			<Files>
 					<File name="Program.cs" AddStandardHeader="True">
@@ -91,7 +91,7 @@ public partial class MainWindow: Gtk.Window
 					<File name="interfaces/MainWindow.ui" AddStandardHeader="True" BuildAction="EmbeddedResource" LogicalName="MainWindow.ui">
 <![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <!-- interface-requires gtk+ 3.0 -->
+  <requires lib="gtk+" version="3.0"/>
   <object class="GtkWindow" id="window1">
     <property name="can_focus">False</property>
     <child>
