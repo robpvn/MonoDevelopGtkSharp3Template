@@ -1,4 +1,4 @@
-<AddinProject appVersion="4.0">
+<AddinProject appVersion="5.0">
 	<Project platforms="Linux">
 		<AddinFile>MonoDevelop.GTKSharp3Project/bin/Debug/MonoDevelop.GTKSharp3Project.dll</AddinFile>
 		<BuildFile>MonoDevelop.GTKSharp3Project.sln</BuildFile>

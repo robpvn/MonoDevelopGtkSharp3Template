@@ -27,6 +27,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="AfterBuild" command="zip ${ProjectName}.mpack addin.info ${TargetName}" workingdir="${TargetDir}" />
+        <Command type="AfterClean" command="rm -f ${TargetDir}/${ProjectName}.mpack" />
+      </CustomCommands>
+    </CustomCommands>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -52,5 +58,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="templates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="addin.info">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>
