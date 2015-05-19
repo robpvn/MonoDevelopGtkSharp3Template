@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Addin id="GTKSharp3Project" version="0.1" namespace="MonoDevelop.GTKSharp3" name="GTK# 3 Simple Project Template" author="Robert Nordan" url="http://www.robpvn.net" copyright="MIT/X11" description="Provides a template for a simple GTK#3 Project where you use Glade (externally) to design the UI files." category="GTK3 Development">
+<Addin id="GTKSharp3Project" version="0.2.0" namespace="MonoDevelop.GTKSharp3" name="GTK# 3 Simple Project Template" author="Robert Nordan" url="http://www.robpvn.net" copyright="MIT/X11" description="Provides a template for a simple GTK#3 Project where you use Glade (externally) to design the UI files." category="GTK3 Development">
   <Runtime>
     <Import assembly="MonoDevelop.GTKSharp3Project.dll" />
   </Runtime>
