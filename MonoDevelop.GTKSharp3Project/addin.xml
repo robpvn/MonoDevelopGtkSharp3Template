@@ -7,7 +7,7 @@
            url         = "http://www.robpvn.net"  
            description = "Provides a template for a simple GTK#3 Project where you use Glade (externally) to design the UI files."  
            category    = "GTK3 Development"  
-           version     = "0.1">  
+           version     = "0.2.0">  
            
 		<Dependencies>  
 			<Addin id="::MonoDevelop.Ide" version="5.0"/>
